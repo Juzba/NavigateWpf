@@ -14,8 +14,8 @@
 
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" >Page 2</TextBlock>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
-            <Button Command="{Binding Backward}" Margin="10" Height="70" Width="300" FontSize="40" Content="Backward"></Button>
-            <Button Command="{Binding Forward}" Margin="10" Height="70" Width="300" FontSize="40" Content="Forward"></Button>
+            <Button Command="{Binding PageBackward}" Margin="10" Height="70" Width="300" FontSize="40" Content="Backward"></Button>
+            <Button Command="{Binding PageForward}" Margin="10" Height="70" Width="300" FontSize="40" Content="Forward"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

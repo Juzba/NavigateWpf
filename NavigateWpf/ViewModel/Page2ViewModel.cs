@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using NavigateWpf.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,22 @@ namespace NavigateWpf.ViewModel
     {
         public Page2ViewModel()
         {
-            PageForward = new RelayCommand(PageFrw);  
-            PageBackward = new RelayCommand(PageBck);  
+            PageForward = new RelayCommand(PageFrw);
+            PageBackward = new RelayCommand(PageBck);
         }
 
         public IRelayCommand PageForward { get; }
         private void PageFrw()
         {
-            MessageBox.Show("PageForward");
+            //_mainWindow.Content = new Page3View();
+            //_mainWindow.DataContext = _page3ViewModel;
         }
 
         public IRelayCommand PageBackward { get; }
         private void PageBck()
         {
-            MessageBox.Show("PageBackward");
+            //_mainWindow.Content = new Page1View();
+            //_mainWindow.DataContext = _page3ViewModel;
         }
 
     }

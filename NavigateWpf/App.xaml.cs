@@ -25,13 +25,16 @@ namespace NavigateWpf
 
             mainWindow.Show();
             mainWindow.Content = new Page1View();
-            mainWindow.DataContext = new Page1ViewModel(); 
+            mainWindow.DataContext = ServiceProvider.GetRequiredService<Page1ViewModel>(); 
         }
 
         
         private static void ConfigureServices(ServiceCollection services)
         {
             services.AddSingleton<MainWindow>();
+            services.AddSingleton<Page1ViewModel>();
+            services.AddSingleton<Page2ViewModel>();
+            services.AddSingleton<Page3ViewModel>();
         }
 
 

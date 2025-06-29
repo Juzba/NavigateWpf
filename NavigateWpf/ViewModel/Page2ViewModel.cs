@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using NavigateWpf.Services;
 using NavigateWpf.View;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,10 @@ namespace NavigateWpf.ViewModel
 {
     public class Page2ViewModel : ObservableObject
     {
-        public Page2ViewModel()
+        private readonly Navigation _navigation;
+        public Page2ViewModel(Navigation navigation)
         {
+            _navigation = navigation;
             PageForward = new RelayCommand(PageFrw);
             PageBackward = new RelayCommand(PageBck);
         }
@@ -21,15 +24,13 @@ namespace NavigateWpf.ViewModel
         public IRelayCommand PageForward { get; }
         private void PageFrw()
         {
-            //_mainWindow.Content = new Page3View();
-            //_mainWindow.DataContext = _page3ViewModel;
+            _navigation.NavigateTo("Page3ViewModel");
         }
 
         public IRelayCommand PageBackward { get; }
         private void PageBck()
         {
-            //_mainWindow.Content = new Page1View();
-            //_mainWindow.DataContext = _page3ViewModel;
+            _navigation.NavigateTo("Page1ViewModel");
         }
 
     }

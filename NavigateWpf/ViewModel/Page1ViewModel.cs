@@ -24,13 +24,13 @@ namespace NavigateWpf.ViewModel
         public IRelayCommand PageForward { get; }
         private void PageFrw()
         {
-            _navigation.NavigateTo();
+            _navigation.NavigateTo("Page2ViewModel");
         }
 
         public IRelayCommand PageBackward { get; }
         private void PageBck()
         {
-            _navigation.NavigateTo();
+            _navigation.NavigateTo("Page3ViewModel");
         }
 
     }

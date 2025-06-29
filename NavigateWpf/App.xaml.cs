@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NavigateWpf.View;
 using NavigateWpf.ViewModel;
+using NavigateWpf.Services;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -32,9 +33,10 @@ namespace NavigateWpf
         private static void ConfigureServices(ServiceCollection services)
         {
             services.AddSingleton<MainWindow>();
-            services.AddSingleton<Page1ViewModel>();
-            services.AddSingleton<Page2ViewModel>();
-            services.AddSingleton<Page3ViewModel>();
+            services.AddTransient<Page1ViewModel>();
+            services.AddTransient<Page2ViewModel>();
+            services.AddTransient<Page3ViewModel>();
+            services.AddTransient<Navigation>();
         }
 
 

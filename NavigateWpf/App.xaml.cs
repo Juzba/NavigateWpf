@@ -1,42 +1,41 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using NavigateWpf.View;
+using Microsoft.Extensions.Hosting;
 using NavigateWpf.ViewModel;
-using NavigateWpf.Services;
-using System.Configuration;
-using System.Data;
 using System.Windows;
 
 namespace NavigateWpf
 {
     public partial class App : Application
     {
-        public IServiceProvider ServiceProvider { get; private set; } = default!;
+        public IHost AppHost { get; private set; } = default!;
 
-        protected override void OnStartup(StartupEventArgs e)
+        public App()
         {
-            base.OnStartup(e);
+            AppHost = Host.CreateDefaultBuilder().ConfigureServices((_, services) =>
+            {
+                services.AddSingleton<MainWindow>();
+                services.AddTransient<Page1ViewModel>();
+                services.AddTransient<Page2ViewModel>();
+                services.AddTransient<Page3ViewModel>();
 
 
-            var services = new ServiceCollection();
-            ConfigureServices(services);
-            ServiceProvider = services.BuildServiceProvider();
-
-
-            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
-
-            mainWindow.Show();
-            mainWindow.Content = new Page1View();
-            mainWindow.DataContext = ServiceProvider.GetRequiredService<Page1ViewModel>(); 
+            }).Build();
         }
 
-        
-        private static void ConfigureServices(ServiceCollection services)
+
+        protected override async void OnStartup(StartupEventArgs e)
         {
-            services.AddSingleton<MainWindow>();
-            services.AddTransient<Page1ViewModel>();
-            services.AddTransient<Page2ViewModel>();
-            services.AddTransient<Page3ViewModel>();
-            services.AddTransient<Navigation>();
+            await AppHost.StartAsync();
+
+            base.OnStartup(e);
+        }
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            await AppHost.StopAsync();
+            AppHost.Dispose();
+
+            base.OnExit(e);
         }
 
 

@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.Hosting;
 using NavigateWpf.View;
 using System;
 using System.Collections.Generic;
@@ -10,24 +11,27 @@ using System.Windows;
 
 namespace NavigateWpf.ViewModel
 {
-    public partial class Page1ViewModel : ObservableObject
+    public partial class Page1ViewModel() : ObservableObject
     {
-		private object _myView = new Page1View();
-		public object MyView
-		{
-			get { return _myView; }
-			set { SetProperty(ref _myView, value); }
-		}
 
 
-		[RelayCommand]
-		private void Btn1()
-		{
-			MessageBox.Show("btn1");
-			MyView = new Page2View();
-		}
-
-
+        [RelayCommand]
+        private void Page1()
+        {
+            MessageBox.Show("page1");
+            //_mainViewModel.CurrentViewModel
+            
+        }
+        [RelayCommand]
+        private void Page2()
+        {
+            MessageBox.Show("page2");
+        }
+        [RelayCommand]
+        private void Page3()
+        {
+            MessageBox.Show("page3");
+        }
 
 
 

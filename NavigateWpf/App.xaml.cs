@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NavigateWpf.View;
 using NavigateWpf.ViewModel;
 using System.Windows;
 
@@ -14,11 +15,14 @@ namespace NavigateWpf
             AppHost = Host.CreateDefaultBuilder().ConfigureServices((_, services) =>
             {
                 services.AddSingleton<MainWindow>();
+                services.AddTransient<MainViewModel>();
                 services.AddTransient<Page1ViewModel>();
                 services.AddTransient<Page2ViewModel>();
                 services.AddTransient<Page3ViewModel>();
 
-
+                services.AddTransient<Page1View>();
+                services.AddTransient<Page2View>();
+                services.AddTransient<Page3View>();
             }).Build();
         }
 

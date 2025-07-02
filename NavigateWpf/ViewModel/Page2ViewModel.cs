@@ -12,18 +12,20 @@ namespace NavigateWpf.ViewModel
 {
     public partial class Page2ViewModel : ObservableObject
     {
-
-
         [RelayCommand]
-        private void Btn1()
+        private void Page1()
         {
-            MessageBox.Show("btn1");
+            MessageBox.Show("page1");
         }
-
-
-
-
-
-
+        [RelayCommand]
+        private void Page2()
+        {
+            MessageBox.Show("page2");
+        }
+        [RelayCommand]
+        private void Page3()
+        {
+            MessageBox.Show("page3");
+        }
     }
 }

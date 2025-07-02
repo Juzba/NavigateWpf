@@ -10,22 +10,8 @@
     Title="MainWindow"
     Width="800"
     Height="450"
-    d:DataContext="{d:DesignInstance Type=viewmodel:Page1ViewModel}"
+    d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
     mc:Ignorable="d">
 
-    <ContentControl Content="{Binding MyView}">
-        <ContentControl.Resources>
-            <DataTemplate DataType="{x:Type viewmodel:Page1ViewModel}">
-                <view:Page1View />
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodel:Page2ViewModel}">
-                <view:Page2View />
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodel:Page3ViewModel}">
-                <view:Page2View />
-            </DataTemplate>
-
-
-        </ContentControl.Resources>
-    </ContentControl>
+    <ContentControl Content="{Binding CurrentViewModel}" />
 </Window>

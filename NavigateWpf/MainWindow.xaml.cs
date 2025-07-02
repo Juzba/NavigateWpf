@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using NavigateWpf.View;
+using NavigateWpf.ViewModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +18,11 @@ namespace NavigateWpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(Page1ViewModel page1ViewModel)
         {
             InitializeComponent();
+            DataContext = page1ViewModel;
+            //Content = new Page1View();
         }
     }
 }

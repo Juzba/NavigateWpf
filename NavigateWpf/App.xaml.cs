@@ -27,6 +27,10 @@ namespace NavigateWpf
         {
             await AppHost.StartAsync();
 
+            var mainWindow = AppHost.Services.GetRequiredService<MainWindow>();
+            mainWindow.Show();
+
+
             base.OnStartup(e);
         }
 
@@ -37,11 +41,5 @@ namespace NavigateWpf
 
             base.OnExit(e);
         }
-
-
-
-
-
     }
-
 }

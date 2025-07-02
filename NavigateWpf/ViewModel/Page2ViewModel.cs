@@ -10,9 +10,20 @@ using System.Windows;
 
 namespace NavigateWpf.ViewModel
 {
-    public class Page2ViewModel : ObservableObject
+    public partial class Page2ViewModel : ObservableObject
     {
-      
+
+
+        [RelayCommand]
+        private void Btn1()
+        {
+            MessageBox.Show("btn1");
+        }
+
+
+
+
+
 
     }
 }

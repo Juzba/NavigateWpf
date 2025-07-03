@@ -14,6 +14,7 @@ namespace NavigateWpf
             AppHost = Host.CreateDefaultBuilder().ConfigureServices((_, services) =>
             {
                 services.AddSingleton<MainWindow>();
+                services.AddSingleton<ApplicationViewModel>();
                 services.AddTransient<Page1ViewModel>();
                 services.AddTransient<Page2ViewModel>();
                 services.AddTransient<Page3ViewModel>();

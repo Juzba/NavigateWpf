@@ -2,6 +2,7 @@
     x:Class="NavigateWpf.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:NavigateWpf">
+    xmlns:local="clr-namespace:NavigateWpf"
+    xmlns:viewmodel="clr-namespace:NavigateWpf.ViewModel">
     <Application.Resources />
 </Application>

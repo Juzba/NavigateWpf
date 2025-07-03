@@ -1,27 +1,30 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using NavigateWpf.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace NavigateWpf.ViewModel
 {
-    public partial class Page1ViewModel : ObservableObject
+    public partial class ApplicationViewModel : ObservableObject
     {
+      
 
-        [RelayCommand]
-        private void Btn1()
-        {
-            MessageBox.Show("btn1");
-        }
+        [ObservableProperty]
+        private object currentPage = new Page1View();
 
 
 
 
 
-	}
+
+
+
+
+
+
+
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NavigateWpf.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,10 @@ namespace NavigateWpf.View
     /// </summary>
     public partial class Page1View : UserControl
     {
-        public Page1View()
+        public Page1View(Page1ViewModel page1ViewModel)
         {
             InitializeComponent();
+            DataContext = page1ViewModel;
         }
     }
 }

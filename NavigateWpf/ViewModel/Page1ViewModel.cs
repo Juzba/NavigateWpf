@@ -1,45 +1,29 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.Extensions.Hosting;
+using NavigateWpf.Services;
 using NavigateWpf.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace NavigateWpf.ViewModel
 {
-    public partial class Page1ViewModel() : ObservableObject
+    public partial class Page1ViewModel(INavigationService navigationService) : ObservableObject
     {
+        private readonly INavigationService _navigationService = navigationService;
+
+
 
         [RelayCommand]
-        private void Btn1()
-        {
-            MessageBox.Show("btn1");
-        }
+        private void Page1() => _navigationService.NavigateTo<Page1View>();
+
 
         [RelayCommand]
-        private void Page1()
-        {
-            MessageBox.Show("page1");
-            //_mainViewModel.CurrentViewModel
-            
-        }
+        private void Page2() => _navigationService.NavigateTo<Page2View>();
+
         [RelayCommand]
-        private void Page2()
-        {
-            MessageBox.Show("page2");
-        }
-        [RelayCommand]
-        private void Page3()
-        {
-            MessageBox.Show("page3");
-        }
+        private void Page3() => _navigationService.NavigateTo<Page3View>();
 
 
 
 
-	}
+
+    }
 }

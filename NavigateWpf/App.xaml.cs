@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NavigateWpf.Services;
 using NavigateWpf.View;
 using NavigateWpf.ViewModel;
 using System.Windows;
@@ -16,6 +17,8 @@ namespace NavigateWpf
             {
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<ApplicationViewModel>();
+                services.AddSingleton<INavigationService, NavigationService>();
+
                 services.AddTransient<Page1ViewModel>();
                 services.AddTransient<Page2ViewModel>();
                 services.AddTransient<Page3ViewModel>();
@@ -32,7 +35,9 @@ namespace NavigateWpf
             await AppHost.StartAsync();
 
             var mainWindow = AppHost.Services.GetRequiredService<MainWindow>();
+            mainWindow.Content = AppHost.Services.GetRequiredService<Page1View>();
             mainWindow.Show();
+
 
 
             base.OnStartup(e);

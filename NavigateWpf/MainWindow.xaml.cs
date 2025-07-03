@@ -18,10 +18,9 @@ namespace NavigateWpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(ApplicationViewModel applicationViewModel)
+        public MainWindow()
         {
             InitializeComponent();
-            DataContext = applicationViewModel;
         }
     }
 }

@@ -31,21 +31,21 @@
                 Width="200"
                 Height="70"
                 Margin="10"
-                Command="{Binding Btn1Command}"
+                Command="{Binding Page1Command}"
                 Content="Page 1"
                 FontSize="40" />
             <Button
                 Width="200"
                 Height="70"
                 Margin="10"
-                Command=""
+                Command="{Binding Page2Command}"
                 Content="Page 2"
                 FontSize="40" />
             <Button
                 Width="200"
                 Height="70"
                 Margin="10"
-                Command=""
+                Command="{Binding Page3Command}"
                 Content="Page3"
                 FontSize="40" />
         </StackPanel>

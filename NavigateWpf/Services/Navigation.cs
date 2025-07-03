@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +11,19 @@ namespace NavigateWpf.Services
 {
     public interface INavigationService
     {
-        void NavigateTo<TPage>() where TPage : Page;
+        void NavigateTo<TUserControl>() where TUserControl : UserControl;
     }
 
-    public class NavigationService : INavigationService
+    public class NavigationService(IHost host, MainWindow mainWindow) : INavigationService
     {
-        private readonly IServiceProvider _serviceProvider;
-        private readonly Frame _frame;
+        private readonly IHost _host = host;
+        private readonly MainWindow _mainwindow = mainWindow;
 
-        public NavigationService(IServiceProvider serviceProvider, Frame frame)
-        {
-            _serviceProvider = serviceProvider;
-            _frame = frame;
-        }
 
-        public void NavigateTo<TPage>() where TPage : Page
+        public void NavigateTo<TUserControl>() where TUserControl : UserControl
         {
-            var page = _serviceProvider.GetRequiredService<TPage>();
-            _frame.Navigate(page);
+            var page = _host.Services.GetRequiredService<TUserControl>();
+            _mainwindow.Content = page;
         }
     }
 }

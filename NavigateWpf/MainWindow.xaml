@@ -13,17 +13,5 @@
     d:DataContext="{d:DesignInstance Type=viewmodel:ApplicationViewModel}"
     mc:Ignorable="d">
 
-    <ContentControl Content="{Binding CurrentPage}">
-        <ContentControl.Resources>
-            <DataTemplate DataType="{x:Type viewmodel:Page1ViewModel}">
-                <view:Page1View />
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodel:Page2ViewModel}">
-                <view:Page2View />
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodel:Page3ViewModel}">
-                <view:Page2View />
-            </DataTemplate>
-        </ContentControl.Resources>
-    </ContentControl>
+    <ContentControl />
 </Window>

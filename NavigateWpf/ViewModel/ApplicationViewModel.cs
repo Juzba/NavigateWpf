@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using NavigateWpf.Services;
 using NavigateWpf.View;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace NavigateWpf.ViewModel
 {
-    public partial class ApplicationViewModel : ObservableObject
+    public partial class ApplicationViewModel(NavigationService navigationService) : ObservableObject
     {
-      
+        private readonly INavigationService _navigationService = navigationService;
 
-        [ObservableProperty]
-        private object currentPage = new Page1View();
+
+        //[ObservableProperty]
+        //private object currentPage;
 
 
 

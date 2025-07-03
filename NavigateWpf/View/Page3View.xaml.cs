@@ -25,7 +25,6 @@ namespace NavigateWpf.View
         {
             InitializeComponent();
             DataContext = page3ViewModel;
-
         }
     }
 }

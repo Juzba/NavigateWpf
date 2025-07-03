@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Services\" />
+    <Folder Include="Stores\" />
   </ItemGroup>
 
 </Project>

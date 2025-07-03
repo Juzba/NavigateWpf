@@ -14,6 +14,11 @@ namespace NavigateWpf.ViewModel
     public partial class Page1ViewModel() : ObservableObject
     {
 
+        [RelayCommand]
+        private void Btn1()
+        {
+            MessageBox.Show("btn1");
+        }
 
         [RelayCommand]
         private void Page1()

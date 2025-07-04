@@ -62,6 +62,6 @@
                     FontSize="30" />
             </StackPanel>
         </StackPanel>
-        <Frame x:Name="FrameMainBox" Grid.Row="1" />
+        <Frame NavigationUIVisibility="Hidden" x:Name="FrameMainBox" Grid.Row="1" />
     </Grid>
 </UserControl>

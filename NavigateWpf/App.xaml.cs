@@ -17,18 +17,8 @@ namespace NavigateWpf
         {
             AppHost = Host.CreateDefaultBuilder().ConfigureServices((_, services) =>
             {
+
                 services.AddSingleton<MainWindow>();
-                
-                //(provider =>
-                //{
-                //    var mainWindow = ActivatorUtilities.CreateInstance<MainWindow>(provider);
-                //    var page =  provider.GetRequiredService<Page1View>();
-
-                //    mainWindow.Content = page;
-                //    //mainWindow.Show();
-                //    return mainWindow;
-                //});
-
                 services.AddSingleton<ApplicationViewModel>();
                 services.AddSingleton<INavigationService, NavigationService>();
 
@@ -41,17 +31,10 @@ namespace NavigateWpf
 
                 services.AddSingleton<Page2View>(provider =>
                 {
-                    // vytvoření instance Page2View (včetně jejího ViewModelu, pokud ho injektuješ)
                     var page2View = ActivatorUtilities.CreateInstance<Page2View>(provider);
-
-                    // Získej službu pro FramePage1, pokud je také v DI
                     var framePage1 = provider.GetRequiredService<FramePage1>();
-
-                    // Najdi Frame (př. veřejná property, nebo internal field)
-                    // - Pro úspěšné nastavení musí být Frame již inicializován (typicky po InitializeComponent)
                     page2View.FrameMainBox.Navigate(framePage1);
 
-                    // můžeš nastavit i cokoliv jiného
                     return page2View;
                 });
 
@@ -70,8 +53,6 @@ namespace NavigateWpf
             var mainWindow = AppHost.Services.GetRequiredService<MainWindow>();
             mainWindow.Content = AppHost.Services.GetRequiredService<Page1View>();
             mainWindow.Show();
-
-
 
             base.OnStartup(e);
         }

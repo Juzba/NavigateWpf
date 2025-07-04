@@ -10,7 +10,6 @@
     Title="MainWindow"
     Width="800"
     Height="450"
-    d:DataContext="{d:DesignInstance Type=viewmodel:ApplicationViewModel}"
     mc:Ignorable="d">
 
     <ContentControl />

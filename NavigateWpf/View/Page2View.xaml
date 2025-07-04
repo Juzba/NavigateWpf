@@ -12,41 +12,56 @@
     mc:Ignorable="d">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="250" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <TextBlock
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="80">
-            Page 2
-        </TextBlock>
-        <StackPanel
-            Grid.Row="1"
-            HorizontalAlignment="Center"
-            Orientation="Horizontal">
-            <Button
-                Width="200"
-                Height="70"
-                Margin="10"
-                Command="{Binding Page1Command}"
-                Content="Page 1"
-                FontSize="40" />
-            <Button
-                Width="200"
-                Height="70"
-                Margin="10"
-                Command="{Binding Page2Command}"
-                Content="Page 2"
-                FontSize="40" />
-            <Button
-                Width="200"
-                Height="70"
-                Margin="10"
-                Command="{Binding Page3Command}"
-                Content="Page3"
-                FontSize="40" />
+        <StackPanel>
+
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontSize="40"
+                Text="Page 2" />
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button
+                    Width="200"
+                    Height="70"
+                    Margin="10"
+                    Command="{Binding Page1Command}"
+                    Content="Page 1"
+                    FontSize="40" />
+                <Button
+                    Width="200"
+                    Height="70"
+                    Margin="10"
+                    Command="{Binding Page2Command}"
+                    Content="Page 2"
+                    FontSize="40" />
+                <Button
+                    Width="200"
+                    Height="70"
+                    Margin="10"
+                    Command="{Binding Page3Command}"
+                    Content="Page3"
+                    FontSize="40" />
+            </StackPanel>
+            <StackPanel
+                Height="50"
+                Margin="20"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+                <Button
+                    Margin="20,0"
+                    Command="{Binding Frame1Command}"
+                    Content="Frame1"
+                    FontSize="30" />
+                <Button
+                    Margin="20,0"
+                    Command="{Binding Frame2Command}"
+                    Content="Frame2"
+                    FontSize="30" />
+            </StackPanel>
         </StackPanel>
+        <Frame x:Name="FrameMainBox" Grid.Row="1" />
     </Grid>
 </UserControl>

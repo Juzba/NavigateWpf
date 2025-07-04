@@ -12,13 +12,13 @@ namespace NavigateWpf.ViewModel
 
 
         [RelayCommand]
-        private void Page1() => _navigationService.NavigateTo<Page1View>();
+        private void Page1() => _navigationService.NavigateToView<Page1View>();
 
 
         [RelayCommand]
-        private void Page2() => _navigationService.NavigateTo<Page2View>();
+        private void Page2() => _navigationService.NavigateToView<Page2View>();
 
         [RelayCommand]
-        private void Page3() => _navigationService.NavigateTo<Page3View>();
+        private void Page3() => _navigationService.NavigateToView<Page3View>();
     }
 }
